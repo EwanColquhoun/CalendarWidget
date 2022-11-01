@@ -1,7 +1,24 @@
+#outer-container {
+    max-width: 400px;
+}
+
 #heading-container {
-    background: whitesmoke;
+    background: transparent;
+    color: #a08255;
+    width: 500px;
+}
+
+#picker-container {
+    align-self: center;
+    width: 100%;
 }
 
 #results-container {
-    background:whitesmoke;
+    background:#a08255;
+    color: whitesmoke;
+    width: 500px;
+    text-align: center;
+    padding: 0.2rem;
+    border-radius: 2%;
+    margin: 0.1rem;
 }
