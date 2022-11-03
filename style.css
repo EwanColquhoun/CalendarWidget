@@ -1,24 +1,26 @@
 #outer-container {
-    max-width: 400px;
+    max-width: 200px;
 }
 
 #heading-container {
     background: transparent;
-    color: #a08255;
-    width: 500px;
+    color: #91744a;
+    width: 200px;
+    padding: 0.5rem;
 }
 
 #picker-container {
     align-self: center;
     width: 100%;
+    padding: 0.5rem;
 }
 
 #results-container {
     background:#a08255;
     color: whitesmoke;
-    width: 500px;
+    width: 100%px;
+    min-height: 20px;
     text-align: center;
-    padding: 0.2rem;
+    padding: 0.5rem;
     border-radius: 2%;
-    margin: 0.1rem;
 }

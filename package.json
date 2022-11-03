@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "@easepick/bundle": "^1.2.0"
+    "@easepick/bundle": "^1.2.0",
+    "@easepick/range-plugin": "^1.2.0"
   }
 }
