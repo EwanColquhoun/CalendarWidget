@@ -1,26 +1,48 @@
+body {
+    background: rgb(179,138,76);
+}
+
+
 #outer-container {
     max-width: 200px;
 }
 
 #heading-container {
-    background: transparent;
-    color: #91744a;
-    width: 200px;
+    background:rgb(231,230,228);
+    color: rgb(179,138,76);
+    font-weight: bolder;
+    width: 100%;
     padding: 0.5rem;
+    border-radius: 2%;
+    border: 2px solid rgb(89,89,89);
 }
 
 #picker-container {
     align-self: center;
     width: 100%;
-    padding: 0.5rem;
+    margin: 0.3rem;
 }
 
 #results-container {
-    background:#a08255;
-    color: whitesmoke;
+    background:rgb(231,230,228);
+    color: rgb(179,138,76);
+    font-weight: bolder;
     width: 100%px;
     min-height: 20px;
     text-align: center;
     padding: 0.5rem;
     border-radius: 2%;
+    border: 2px solid rgb(89,89,89);
+}
+
+#form-container {
+    background:rgb(231,230,228);
+    color: rgb(179,138,76);
+    font-weight: bolder;
+    width: 100%px;
+    text-align: center;
+    padding: 0.5rem;
+    border-radius: 2%;
+    border: 2px solid rgb(89,89,89);
+    margin-top: 0.3rem;
 }
