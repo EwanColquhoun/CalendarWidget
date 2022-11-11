@@ -14,16 +14,16 @@
             <p>Please select your desired dates:</p>
         </div>
         <div id="picker-container">
-            <input id="datepicker"/>
+            <input id="datepicker" placeholder="Choose dates here..."/>
         </div>
-        <div id="results-container">
+        <div id="results-container" class="hide">
             <span>Quote</span>
         </div>
-        <div id="form-container">
+        <div id="form-container" class="hide">
             <form id="javascript_form">
                 <input type="text" name="subject" placeholder="Name" />
                 <input type="text" name="extra_email" placeholder="Email Address">
-                <input type="text" name="extra_phone_number"placeholder="Phone Number >
+                <input type="text" name="extra_phone_number"placeholder="Phone Number" >
                 <input type="text" name="extra_postcode" placeholder="Postcode">
                 <textarea name="text" placeholder="Message" hidden></textarea>
                 <input type="checkbox" name="checkbox" id="checkbox">
@@ -37,3 +37,9 @@
 
   </body>
 </html>
+
+<!-- To do:
+1. choose dates
+2. work out quote with no discount
+3. box re discount available
+4. get details and send mail -->

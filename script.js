@@ -1,19 +1,42 @@
+let results = document.getElementById('results-container');
+let form = document.getElementById('form-container'); 
+
 function calculateDays(days){
-    let results = document.getElementById('results-container');
     let price = discount(days);
     let quote = calculateQuote(days, price);
-    results.innerHTML = `
-    <span>Your total hire is ${days} days.<br>
-    Total estimate is £${quote}</span>`;
-    
-    
-    console.log(subject, 'subjcect');
+    console.log('caldays called', days)
+    // Need to work out the logic here.... the else works
+    if (days < 1 ) {
+      console.log('<1 days')
+
+      results.classList.add('show');
+      form.classList.add('show');
+      results.innerHTML = 
+      `Please select dates from the drop down calendar above.
+      Alternatively, please get in touch!</span>`
+    } else {
+      console.log('else')
+      results.classList.add("show");
+      form.classList.add('show');
+      results.innerHTML = `
+      <span>Your total hire is ${days} days.<br>
+      Total estimate is £${quote}.<br> 
+      \nYou may qualify for a discount if you add more days. \n
+      Please get in touch if you are interested in a discount.
+      </span>`;
+    }
     return days, subject
 }
 
+
+function refresh(){
+    console.log('mouse enter')
+    results.classList.remove('show')
+}
+
 function calculateQuote(days, price){
-    quote = price * days
-    return quote;
+  quote = price * days
+  return quote;
 }
 
 function discount(days){
@@ -21,16 +44,16 @@ function discount(days){
         price = 25;
         return price
     } else if (days >=21 && days <=42 ) {
-        price = 27;
-        return price
+      price = 27;
+      return price
     } else {
-        price = 29;
-        return price
+      price = 29;
+      return price
     }
-}
-
-// Date picker
-const picker = new easepick.create({
+  }
+  
+  // Date picker
+  const picker = new easepick.create({
     element: document.getElementById('datepicker'),
     css: [
       'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css',
@@ -56,6 +79,9 @@ const picker = new easepick.create({
    },
   });
 
+
+  
+picker.onclick = refresh();
 
 // Postmail
 //update this with your js_form selector
