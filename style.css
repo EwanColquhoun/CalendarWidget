@@ -2,49 +2,96 @@ body {
     background: rgb(179,138,76);
 }
 
-
 #outer-container {
-    max-width: 200px;
+    max-width: 335px;
 }
 
 #heading-container {
     background:rgb(231,230,228);
     color: rgb(179,138,76);
     font-weight: bolder;
-    width: 100%;
-    padding: 0.5rem;
+    width: 295px;
+    padding: 10px;
     border-radius: 2%;
     border: 2px solid rgb(89,89,89);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+}
+
+#datepicker {
+    width: 308px;
+    margin: 0.3rem auto;
+    text-align: center;
 }
 
 #picker-container {
-    align-self: center;
-    width: 100%;
-    margin: 0.3rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #results-container {
     background:rgb(231,230,228);
     color: rgb(179,138,76);
     font-weight: bolder;
-    width: 100%px;
+    width: 295px;
     min-height: 20px;
     text-align: center;
     padding: 0.5rem;
     border-radius: 2%;
     border: 2px solid rgb(89,89,89);
+    margin: auto;
 }
 
 #form-container {
-    background:rgb(231,230,228);
-    color: rgb(179,138,76);
+    background:#e7e6e4;
+    color: #b38a4c;
     font-weight: bolder;
-    width: 100%px;
+    width: 295px;
     text-align: center;
     padding: 0.5rem;
     border-radius: 2%;
     border: 2px solid rgb(89,89,89);
+    margin: 0.3rem auto;
+}
+
+#javascript_form {
+    display: inline-block;
+}
+
+#javascript_form .p_details {
+    width: 90%;
+    margin: 0.1rem auto;
+}
+
+#js_send {
+    width: 60%;
+    height: 2rem;
+    background-color: #b38a4c;
+    border-radius: 5px;
+    color: #e7e6e4;
     margin-top: 0.3rem;
+    border: 2px solid rgb(89,89,89);
+}
+
+#js_send:hover {
+    transform: scale(1.2);
+    background: #e7e6e4;
+    color: #b38a4c;
+    border: 2px solid rgb(179,138,76);;
+}
+
+#details {
+    display: flex;
+}
+
+#checkbox {
+    font-size: x-large;
+}
+
+#details p {
+    margin: 0.3rem auto;
 }
 
 .hide {
@@ -52,5 +99,5 @@ body {
 }
 
 .show {
-    display: inline-block;
+    display: flex;
 }

@@ -21,7 +21,6 @@ function calculateDays(days){
       results.innerHTML = `
       <span>Your total hire is ${days} days.<br>
       Total estimate is £${quote}.<br> 
-      \nYou may qualify for a discount if you add more days. \n
       Please get in touch if you are interested in a discount.
       </span>`;
     }
@@ -60,6 +59,8 @@ function discount(days){
       'https://cdn.jsdelivr.net/npm/@easepick/range-plugin@1.2.0/dist/index.css',
     ],
     autoApply: true,
+    inline: true,
+    format: "DD MMM YYYY",
     plugins: ['RangePlugin'],
     RangePlugin: {
       tooltipNumber(num) {
@@ -69,7 +70,8 @@ function discount(days){
       locale: {
         one: 'night',
         other: 'nights',
-      }, 
+      },
+      tooltip: true,
     },
     setup(picker) {
       picker.on('select', (e) => {
