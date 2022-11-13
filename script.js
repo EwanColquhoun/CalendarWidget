@@ -4,32 +4,34 @@ let form = document.getElementById('form-container');
 function calculateDays(days){
     let price = discount(days);
     let quote = calculateQuote(days, price);
-    console.log('caldays called', days)
     // Need to work out the logic here.... the else works
     if (days < 1 ) {
-      console.log('<1 days')
-
       results.classList.add('show');
       form.classList.add('show');
       results.innerHTML = 
-      `Please select dates from the drop down calendar above.
-      Alternatively, please get in touch!</span>`
-    } else {
-      console.log('else')
+      `Please select dates from the calendar above.
+      Alternatively, please fill in your details below and we'll get in touch.</span>`
+    } else if (days < 8) {
       results.classList.add("show");
       form.classList.add('show');
       results.innerHTML = `
-      <span>Your total hire is ${days} days.<br>
-      Total estimate is £${quote}.<br> 
-      Please get in touch if you are interested in a discount.
-      </span>`;
+      <span>The selected hire is <span class="result">${days} days</span>.<br>
+      <span>Estimated quote: </span><span class="result">£203</span>
+      `
+    } else {
+      results.classList.add("show");
+      form.classList.add('show');
+      results.innerHTML = `
+      <span>The selected hire is <span class="result">${days} days</span>.<br>
+      <span>Estimated quote: </span><span class="result">£${quote}</span><br>
+      <span>The selected length of hire qualifies for a discount.</span><br>
+      <span>If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>`;
     }
-    return days, subject
+    return days
 }
 
 
 function refresh(){
-    console.log('mouse enter')
     results.classList.remove('show')
 }
 
@@ -68,8 +70,8 @@ function discount(days){
         return calculateDays(days);
       },
       locale: {
-        one: 'night',
-        other: 'nights',
+        one: 'day',
+        other: 'days',
       },
       tooltip: true,
     },
@@ -90,7 +92,8 @@ picker.onclick = refresh();
 var form_id_js = "javascript_form";
 
 var data_js = {
-    "access_token": "t8gr94s5df3qrka13ypminrd"
+    // "access_token": "t8gr94s5df3qrka13ypminrd", //ewan
+    "access_token": "4ovn9lywqidb25o81711plwv", //jeremy
 };
 
 function js_onSuccess() {
@@ -133,7 +136,16 @@ function js_send() {
     var email = document.querySelector("#" + form_id_js + " [name='extra_email']").value;
     var phone = document.querySelector("#" + form_id_js + " [name='extra_phone_number']").value;
     var postcode = document.querySelector("#" + form_id_js + " [name='extra_postcode']").value;
-    message = `Hi Jeremy, Email: ${email}, Phone: ${phone}, Postcode: ${postcode}, Dates: ${dates}`
+
+    message = `Hi Kitchen Pod Hire, \n
+    You have an enquiry from ${subject}. The details are below: \n 
+    Email: ${email},\n
+    Phone: ${phone}, \n
+    Postcode: ${postcode},\n
+    Dates: ${dates}.\n
+    Thank you.
+    `
+    
     data_js['subject'] = subject;
     data_js['text'] = message;
     var params = toParams(data_js);
@@ -160,7 +172,6 @@ function toParams(data_js) {
     for ( var key in data_js ) {
         form_data.push(encodeURIComponent(key) + "=" + encodeURIComponent(data_js[key]));
     }
-    console.log(form_data)
     return form_data.join("&");
 }
 
