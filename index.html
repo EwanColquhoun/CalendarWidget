@@ -4,11 +4,12 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <title>Calendar Widget</title>
+        <script src="https://kit.fontawesome.com/48b20a3378.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.umd.min.js"></script>
         <script type="text/javascript" src="script.js" defer></script>
         <link rel="stylesheet" href="style.css">
     </head>
-    <body>
+    <body id="override">
         <div id="outer-container">
             <div id="heading-container">
                 <p>Please select your desired dates:</p>
@@ -28,10 +29,13 @@
                     <textarea name="text" placeholder="Message" hidden></textarea>
                     <div id="details">
                         <input type="checkbox" name="checkbox" id="checkbox">
-                        <p>Accept website terms and conditions</p>
+                        <p>Accept website <a class="terms-link" href="https://www.kitchenpodhire.com/website-terms" target="_blank">terms and conditions.</a><br>
+                        View our <a href="https://www.kitchenpodhire.com/privacy-policy" target="_blank">Privacy Policy</a></p>
                     </div>
-
-                    <input type="submit" id="js_send" value="Submit" />
+                    <div>
+                        <input type="submit" id="js_send" value="Submit" />
+                        <button id="refresh-button" onClick="window.location.reload()"><i class="fa-solid fa-rotate"></i></button>
+                    </div>
                 
                     <!-- not required, but we'd appreciate it if you'd link to us somewhere on your site -->
                     <!-- <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p> -->

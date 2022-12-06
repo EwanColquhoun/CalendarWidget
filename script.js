@@ -4,7 +4,6 @@ let form = document.getElementById('form-container');
 function calculateDays(days){
     let price = discount(days);
     let quote = calculateQuote(days, price);
-    // Need to work out the logic here.... the else works
    if (days < 8 && days >=1 ){
       results.classList.add("show");
       form.classList.add('show');
@@ -41,9 +40,8 @@ function calculateDays(days){
     return days
 }
 
-
 function refresh(){
-    results.classList.remove('show')
+    results.classList.replace('show', 'hide')
 }
 
 function calculateQuote(days, price){
@@ -67,17 +65,62 @@ function discount(days){
   // Date picker
   const picker = new easepick.create({
     element: document.getElementById('datepicker'),
-    css: [
-      'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css',
-      'https://cdn.jsdelivr.net/npm/@easepick/range-plugin@1.2.0/dist/index.css',
-    ],
+    // css: [
+    //   'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css',
+    //   'https://cdn.jsdelivr.net/npm/@easepick/range-plugin@1.2.0/dist/index.css',
+    // ],
+    css: function(s) {
+      console.log(s)
+      /* to load default style into shadow dom */
+      const cssLinks = ["https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css"]
+      cssLinks.forEach(cssLink => {
+          const link = document.createElement('link');
+          link.href = cssLink;
+          link.rel = 'stylesheet';
+          const onReady = () => {
+          this.cssLoaded++;
+
+          if (this.cssLoaded === cssLinks.length) {
+              this.ui.wrapper.style.display = '';
+          }
+          };
+          link.addEventListener('load', onReady);
+          link.addEventListener('error', onReady);
+          this.ui.shadowRoot.append(link);
+      })
+
+      /* append custom style css */
+      const css = `
+        .container.range-plugin .calendar>.days-grid>.day.end,
+        .container.range-plugin .calendar>.days-grid>.day.start {
+            background-color: #b38a4c;
+        }
+        .container.range-plugin .calendar>.days-grid>.day.start:after {
+          border-left: 8px solid #3c3c3c;
+        }
+        .container.range-plugin .calendar>.days-grid>.day.end:after {
+          border-right: 8px solid #3c3c3c;
+        }
+        .container.range-plugin .calendar>.days-grid>.day.in-range {
+            background-color: #e7e6e4;
+        }
+      `
+      const style = document.createElement('style');
+      const styleText = document.createTextNode(css);
+      style.appendChild(styleText);
+
+      this.ui.shadowRoot.append(style);
+      this.ui.wrapper.style.display = '';
+    },
     autoApply: true,
     inline: true,
     format: "DD MMM YYYY",
     plugins: ['RangePlugin'],
     RangePlugin: {
       tooltipNumber(num) {
-        let days = num-1;
+        // days are days and not nights, hence not num-1.
+        let days = num; 
+        styling();
         return calculateDays(days);
       },
       locale: {
@@ -94,8 +137,6 @@ function discount(days){
    },
   });
 
-
-  
 picker.onclick = refresh();
 
 // Postmail
@@ -191,4 +232,8 @@ js_form.addEventListener("submit", function (e) {
     e.preventDefault();
 });
 
-    
+// styling
+function styling () {
+  document.querySelector('.easepick-wrapper').shadowRoot.querySelector('.in-range').setAttribute('style', 'color:#e7e6e4')
+  document.querySelector('.easepick-wrapper').shadowRoot.querySelector('.start').setAttribute('style', 'color:#b38a4c')
+}

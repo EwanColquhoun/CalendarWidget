@@ -1,5 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
+
 body {
     background: rgb(179,138,76);
+    font-family: 'Barlow', sans-serif;
 }
 
 #outer-container {
@@ -11,7 +14,7 @@ body {
     color: rgb(185, 124, 31);
     font-weight: bolder;
     width: 295px;
-    padding: 10px;
+    padding: 0.3rem;
     border-radius: 5px;
     border: 2px solid rgb(89,89,89);
     display: flex;
@@ -37,7 +40,7 @@ body {
 #results-container {
     background:rgb(231,230,228);
     color: rgb(185, 124, 31);
-    font-weight: bolder;
+    font-weight: unset;
     width: 295px;
     min-height: 20px;
     text-align: center;
@@ -68,6 +71,16 @@ body {
     margin: 0.1rem auto;
 }
 
+#refresh-button {
+    width: 15%;
+    height: 2rem;
+    background-color: #b38a4c;
+    border-radius: 5px;
+    color: #e7e6e4;
+    margin-top: 0.3rem;
+    border: 2px solid rgb(89,89,89);
+}
+
 #js_send {
     width: 60%;
     height: 2rem;
@@ -83,6 +96,11 @@ body {
     background: #e7e6e4;
     color: #b38a4c;
     border: 2px solid rgb(179,138,76);;
+}
+
+a {
+    text-decoration: none;
+    color: #75582d;
 }
 
 #details {
