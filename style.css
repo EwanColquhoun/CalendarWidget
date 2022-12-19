@@ -3,6 +3,11 @@
 body {
     background:rgb(231, 230, 228);
     font-family: 'Barlow', sans-serif;
+    margin-top: 5vh;
+}
+
+p {
+    margin: unset;
 }
 
 #content-holder {
@@ -21,7 +26,7 @@ body {
     /* border-radius: 5px;
     border: 2px solid rgb(89,89,89); */
     display: flex;
-    justify-content: center;
+    /* justify-content: center; */
     margin: auto;
 }
 /* 
@@ -44,8 +49,8 @@ body {
     /* background:rgb(231,230,228); */
     font-weight: unset;
     width: 295px;
-    min-height: 20px;
-    height: 45%;
+    /* min-height: 20px; */
+    /* height: 45%; */
     text-align: center;
     padding: 0.5rem;
     /* border-radius: 5px; */
@@ -55,16 +60,14 @@ body {
 
 .results {
     margin: auto;
-    padding: 0 2rem;
-    text-align: left;
-    line-height: 20px;
-
+    padding: 0 1rem;
+    text-align: justify;
+    line-height: 24px;
 }
 
 #form-container {
     background:#e7e6e4;
-    color: rgb(185, 124, 31);
-    font-weight: bolder;
+    /* font-weight: bolder; */
     width: 295px;
     text-align: center;
     padding: 0.5rem;
@@ -81,39 +84,47 @@ body {
 #javascript_form .p_details {
     width: 80%;
     margin: 0.2rem auto;
-    height: 1.5rem;
+    height: 2rem;
     border: 2px solid grey;
 }
 
 #javascript_form .p_details::placeholder {
-    color: red;
+    color: lightgrey;
+    padding-left: 5px;
+}
+
+.terms-link {
+    color: #b38a4c;
 }
 
 #refresh-button {
     width: 15%;
     height: 2rem;
     background-color: #b38a4c;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     color: #e7e6e4;
-    margin-top: 0.3rem;
-    border: 2px solid rgb(89,89,89);
+    border: unset;
+    font-size: larger;
+    /* margin-top: 0.3rem; */
+    /* border: 2px solid rgb(89,89,89); */
 }
 
 #js_send {
     width: 60%;
     height: 2rem;
     background-color: #b38a4c;
-    border-radius: 5px;
+    /* border-radius: 5px; */
     color: #e7e6e4;
-    margin-top: 0.3rem;
-    border: 2px solid rgb(89,89,89);
+    font-size: larger;
+    /* margin-top: 0.3rem; */
+    border: unset;
 }
 
-#js_send:hover {
-    transform: scale(1.2);
+#js_send:hover, #refresh-button:hover {
+    transition: 1.5ms;
     background: #e7e6e4;
-    color: #b38a4c;
-    border: 2px solid rgb(179,138,76);;
+    color: rgb(89,89,89);
+    border: 2px solid rgb(89,89,89);
 }
 
 a {
@@ -123,6 +134,8 @@ a {
 
 #details {
     display: flex;
+    font-size: smaller;
+    margin: 0.5rem 1rem;
 }
 
 #checkbox {
@@ -144,4 +157,13 @@ a {
 .result {
     color: black;
     font-weight: bolder;
+}
+
+.brown {
+    color: #b38a4c;
+    font-weight: 600;
+}
+
+.top-padding {
+    padding-top: 0.5rem;
 }
