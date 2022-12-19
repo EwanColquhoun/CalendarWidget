@@ -10,27 +10,35 @@
         <link rel="stylesheet" href="style.css">
     </head>
     <body id="override">
-        <div id="outer-container">
-            <div id="heading-container">
-                <p>Please select your desired dates:</p>
+        <div id="content-holder">
+            <div class="outer-containers">
+                <div id="heading-container">
+                    <p>Please select your desired dates:</p>
+                </div>
+                <div id="picker-container">
+                    <input id="datepicker" class="hide" placeholder="Choose dates here..."/>
+                </div>
             </div>
-            <div id="picker-container">
-                <input id="datepicker" class="hide" placeholder="Choose dates here..."/>
-            </div>
-            <div id="results-container" class="hide">
-                <span>If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
-            </div>
-            <div id="form-container" class="hide">
-                <form id="javascript_form">
-                    <input type="text" class="p_details" name="subject" placeholder="Name" />
-                    <input type="text" class="p_details" name="extra_email" placeholder="Email Address">
-                    <input type="text" class="p_details" name="extra_phone_number"placeholder="Phone Number" >
-                    <input type="text" class="p_details" name="extra_postcode" placeholder="Postcode">
-                    <textarea name="text" placeholder="Message" hidden></textarea>
-                    <div id="details">
+            <div class="outer-containers">
+                <div id="results-container" class="hider">
+                    <div class="results">
+                        <p> 
+                            If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.
+                        </p>
+                    </div>
+                        
+                </div>
+                <div id="form-container" class="hider">
+                    <form id="javascript_form">
+                        <input type="text" class="p_details" name="subject" placeholder="Add your name" />
+                        <input type="text" class="p_details" name="extra_email" placeholder="Add your email">
+                        <input type="text" class="p_details" name="extra_phone_number"placeholder="Add your phone number" >
+                        <input type="text" class="p_details" name="extra_postcode" placeholder="Add your postcode">
+                        <textarea name="text" placeholder="Message" hidden></textarea>
+                        <div id="details">
                         <input type="checkbox" name="checkbox" id="checkbox">
                         <p>Accept website <a class="terms-link" href="https://www.kitchenpodhire.com/website-terms" target="_blank">terms and conditions.</a><br>
-                        View our <a href="https://www.kitchenpodhire.com/privacy-policy" target="_blank">Privacy Policy</a></p>
+                            View our <a href="https://www.kitchenpodhire.com/privacy-policy" target="_blank">Privacy Policy</a></p>
                     </div>
                     <div>
                         <input type="submit" id="js_send" value="Submit" />
@@ -41,11 +49,12 @@
                     <!-- <p>Powered by <a href="https://postmail.invotes.com" target="_blank">PostMail</a></p> -->
                 </form>
             </div>
+            </div>
         </div>
     </body>
-</html>
+    </html>
 
-<!-- To do:
+    <!-- To do:
 1. choose dates
 2. work out quote with no discount
 3. box re discount available

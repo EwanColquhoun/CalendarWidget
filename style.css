@@ -1,22 +1,25 @@
 @import url('https://fonts.googleapis.com/css2?family=Barlow&display=swap');
 
 body {
-    background: rgb(179,138,76);
+    background:rgb(231, 230, 228);
     font-family: 'Barlow', sans-serif;
 }
 
-#outer-container {
-    max-width: 335px;
+#content-holder {
+    display: flex;
+    height: 390px;
+    justify-content: center;
+    background-color: #e7e6e4;
 }
 
 #heading-container {
     background:rgb(231, 230, 228);
-    color: rgb(185, 124, 31);
+    color: black;
     font-weight: bolder;
-    width: 295px;
+    width: 100%;
     padding: 0.3rem;
-    border-radius: 5px;
-    border: 2px solid rgb(89,89,89);
+    /* border-radius: 5px;
+    border: 2px solid rgb(89,89,89); */
     display: flex;
     justify-content: center;
     margin: auto;
@@ -38,16 +41,24 @@ body {
 }
 
 #results-container {
-    background:rgb(231,230,228);
-    color: rgb(185, 124, 31);
+    /* background:rgb(231,230,228); */
     font-weight: unset;
     width: 295px;
     min-height: 20px;
+    height: 45%;
     text-align: center;
     padding: 0.5rem;
-    border-radius: 5px;
-    border: 2px solid rgb(89,89,89);
+    /* border-radius: 5px; */
+    /* border: 2px solid rgb(89,89,89); */
     margin: auto;
+}
+
+.results {
+    margin: auto;
+    padding: 0 2rem;
+    text-align: left;
+    line-height: 20px;
+
 }
 
 #form-container {
@@ -57,9 +68,10 @@ body {
     width: 295px;
     text-align: center;
     padding: 0.5rem;
-    border-radius: 2%;
-    border: 2px solid rgb(89,89,89);
+    /* border-radius: 2%; */
+    /* border: 2px solid rgb(89,89,89); */
     margin: 0.3rem auto;
+    height: 50%;
 }
 
 #javascript_form {
@@ -67,8 +79,14 @@ body {
 }
 
 #javascript_form .p_details {
-    width: 90%;
-    margin: 0.1rem auto;
+    width: 80%;
+    margin: 0.2rem auto;
+    height: 1.5rem;
+    border: 2px solid grey;
+}
+
+#javascript_form .p_details::placeholder {
+    color: red;
 }
 
 #refresh-button {
@@ -125,5 +143,5 @@ a {
 
 .result {
     color: black;
-    font-style: italic;
+    font-weight: bolder;
 }

@@ -5,36 +5,44 @@ function calculateDays(days){
     let price = discount(days);
     let quote = calculateQuote(days, price);
    if (days < 8 && days >=1 ){
-      results.classList.add("show");
-      form.classList.add('show');
+      // results.classList.add("show");
+      // form.classList.add('show');
       results.innerHTML = `
-      <span>The selected hire is <span class="result">${days} days</span>.<br>
-      <span>Estimated quote: </span><span class="result">£203</span><br>
-      <span>If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
+      <div class="results">
+        <span>The selected hire is <span class="result">${days} days</span>.<br>
+        <span>Estimated quote: </span><span class="result">£203</span><br>
+        <span>If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
+      </div>
       `;
     } else if (days > 21){
-      results.classList.add("show");
-      form.classList.add('show');
+      // results.classList.add("show");
+      // form.classList.add('show');
       results.innerHTML = `
-      <span>The selected hire is <span class="result">${days} days</span>.<br>
-      <span>Estimated quote: </span><span class="result">£${quote}</span><br>
-      <span>The selected length of hire qualifies for a <span class="result">discount</span>.</span><br>
-      <span>If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
+      <div class="results">
+        <span>The selected hire is <span class="result">${days} days</span>.<br>
+        <span>Estimated quote: </span><span class="result">£${quote}</span><br>
+        <span>The selected length of hire qualifies for a <span class="result">discount</span>.</span><br>
+        <span>If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
+      </div>
       `;
     } else if (days >= 8 & days <=21){
-      results.classList.add("show");
-      form.classList.add('show');
+      // results.classList.add("show");
+      // form.classList.add('show');
       results.innerHTML = `
-      <span>The selected hire is <span class="result">${days} days</span>.<br>
-      <span>Estimated quote: </span><span class="result">£${quote}</span><br>
-      <span>If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
+      <div class="results">
+        <span">The selected hire is <span class="result">${days} days</span>.<br>
+        <span>Estimated quote: </span><span class="result">£${quote}</span><br>
+        <span>If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
+      </div>
       `;
     } else {
-      results.classList.add('show');
-      form.classList.add('show');
-      results.innerHTML = 
-      `<span>Please select dates from the calendar above.<br>
-       If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
+      // results.classList.add('show');
+      // form.classList.add('show');
+      results.innerHTML = `
+      <div class="results">
+        <span>Please select dates from the calendar above.<br>
+        If you'd like to discuss your quote or make a booking, please fill in your details below and we'll get in touch.</span>
+      </div>
       `;
     };
     return days
