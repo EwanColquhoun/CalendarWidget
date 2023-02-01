@@ -23,20 +23,10 @@ p {
     font-weight: bolder;
     width: 100%;
     padding: 0.3rem;
-    /* border-radius: 5px;
-    border: 2px solid rgb(89,89,89); */
+    letter-spacing: 1px;
     display: flex;
-    /* justify-content: center; */
     margin: auto;
 }
-/* 
-#datepicker {
-    width: 308px;
-    margin: 0.3rem auto;
-    text-align: center;
-    border: 2px solid rgb(89,89,89);
-    border-radius: 2%;
-} */
 
 #picker-container {
     display: flex;
@@ -46,15 +36,10 @@ p {
 }
 
 #results-container {
-    /* background:rgb(231,230,228); */
     font-weight: unset;
     width: 295px;
-    /* min-height: 20px; */
-    /* height: 45%; */
     text-align: center;
     padding: 0.5rem;
-    /* border-radius: 5px; */
-    /* border: 2px solid rgb(89,89,89); */
     margin: auto;
 }
 
@@ -63,16 +48,14 @@ p {
     padding: 0 1rem;
     text-align: justify;
     line-height: 24px;
+    letter-spacing: 1px;
 }
 
 #form-container {
     background:#e7e6e4;
-    /* font-weight: bolder; */
     width: 295px;
     text-align: center;
     padding: 0.5rem;
-    /* border-radius: 2%; */
-    /* border: 2px solid rgb(89,89,89); */
     margin: 0.3rem auto;
     height: 50%;
 }
@@ -82,7 +65,7 @@ p {
 }
 
 #javascript_form .p_details {
-    width: 80%;
+    width: 90%;
     margin: 0.2rem auto;
     height: 2rem;
     border: 2px solid grey;
@@ -101,22 +84,17 @@ p {
     width: 15%;
     height: 2rem;
     background-color: #b38a4c;
-    /* border-radius: 5px; */
     color: #e7e6e4;
     border: unset;
     font-size: larger;
-    /* margin-top: 0.3rem; */
-    /* border: 2px solid rgb(89,89,89); */
 }
 
 #js_send {
     width: 60%;
     height: 2rem;
     background-color: #b38a4c;
-    /* border-radius: 5px; */
     color: #e7e6e4;
     font-size: larger;
-    /* margin-top: 0.3rem; */
     border: unset;
 }
 

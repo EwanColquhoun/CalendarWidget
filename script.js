@@ -77,8 +77,7 @@ function discount(days){
     //   'https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css',
     //   'https://cdn.jsdelivr.net/npm/@easepick/range-plugin@1.2.0/dist/index.css',
     // ],
-    css: function(s) {
-      console.log(s)
+    css: function() {
       /* to load default style into shadow dom */
       const cssLinks = ["https://cdn.jsdelivr.net/npm/@easepick/bundle@1.2.0/dist/index.css"]
       cssLinks.forEach(cssLink => {
@@ -119,6 +118,10 @@ function discount(days){
           background-color: #e7e6e4;
           color: black !important;
         }
+        .container.range-plugin .calendar>.days-grid>.day:hover {
+          border-color: black;
+          color: black;
+        }
       `
       const style = document.createElement('style');
       const styleText = document.createTextNode(css);
@@ -135,7 +138,6 @@ function discount(days){
       tooltipNumber(num) {
         // days are days and not nights, hence not num-1.
         let days = num; 
-        styling();
         return calculateDays(days);
       },
       locale: {
@@ -246,9 +248,3 @@ var js_form = document.getElementById(form_id_js);
 js_form.addEventListener("submit", function (e) {
     e.preventDefault();
 });
-
-// styling
-function styling () {
-  document.querySelector('.easepick-wrapper').shadowRoot.querySelector('.in-range').setAttribute('style', 'color:#e7e6e4')
-  document.querySelector('.easepick-wrapper').shadowRoot.querySelector('.start').setAttribute('style', 'color:#b38a4c')
-}
