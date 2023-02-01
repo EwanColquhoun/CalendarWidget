@@ -100,17 +100,24 @@ function discount(days){
       /* append custom style css */
       const css = `
         .container.range-plugin .calendar>.days-grid>.day.end,
-        .container.range-plugin .calendar>.days-grid>.day.start {
-            background-color: #b38a4c;
+        .container.range-plugin .calendar>.days-grid>.day.start,
+        .container.range-plugin .calendar>.days-grid>.day.selected.start {
+          background-color: #b38a4c;
+          color: white !important;
         }
-        .container.range-plugin .calendar>.days-grid>.day.start:after {
+        .container.range-plugin .calendar>.days-grid>.day.start:after,
+        .container.range-plugin .calendar>.days-grid>.day.end.flipped:after {
           border-left: 8px solid #3c3c3c;
+          color: black !important;
         }
-        .container.range-plugin .calendar>.days-grid>.day.end:after {
+        .container.range-plugin .calendar>.days-grid>.day.end:after,
+        .container.range-plugin .calendar>.days-grid>.day.start.flipped:after {
           border-right: 8px solid #3c3c3c;
+          color: black !important;
         }
         .container.range-plugin .calendar>.days-grid>.day.in-range {
-            background-color: #e7e6e4;
+          background-color: #e7e6e4;
+          color: black !important;
         }
       `
       const style = document.createElement('style');

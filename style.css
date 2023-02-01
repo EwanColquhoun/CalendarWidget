@@ -167,3 +167,7 @@ a {
 .top-padding {
     padding-top: 0.5rem;
 }
+
+.in-range {
+    color: red;
+}
